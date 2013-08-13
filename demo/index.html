@@ -2,52 +2,57 @@
 <head>
 	<title>Demo</title>
 	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+	ul {
+		list-style-type: none;
+		padding-left: 0px;
+	}
+	</style>
 </head>
 <body>
 
-<div>
+	<h1>Cats!</h1>
 
-	<ul>
-		<li class="selected"><img src="img/cat1.jpg" usemap="#catsStart"></li>
-		<li><img src="img/cat2.jpg" usemap="#cats"></li>
-		<li><img src="img/cat3.jpg" usemap="#cats"></li>
-		<li><img src="img/cat4.png" usemap="#catsEnd"></li>
-	</ul>
-
-	<map name="cats">
-		<area shape="rect" coords="100,0,200,200" href="#" class="nextCat"></area>
-		<area shape="rect" coords="0,0,100,200" href="#" class="prevCat"></area>
-	</map>
-
-	<map name="catsEnd">
-		<area shape="rect" coords="100,0,200,200" href="#"</area>
-		<area shape="rect" coords="0,0,100,200" href="#" class="prevCat"></area>
-	</map>
+	<div>
+		<ul>
+			<li class="selected"><img src="img/cat1.jpg" usemap="#catsStart"></li>
+			<li><img src="img/cat2.jpg" usemap="#cats"></li>
+			<li><img src="img/cat3.jpg" usemap="#cats"></li>
+			<li><img src="img/cat4.png" usemap="#catsEnd"></li>
+		</ul>
+	</div>
 
 	<map name="catsStart">
 		<area shape="rect" coords="100,0,200,200" href="#" class="nextCat"</area>
-		<area shape="rect" coords="0,0,100,200" href="#"</area>
 	</map>	
+	
+	<map name="cats">
+		<area shape="rect" coords="0,0,100,200" href="#" class="prevCat"></area>
+		<area shape="rect" coords="100,0,200,200" href="#" class="nextCat"></area>
+	</map>
 
-<script type="text/javascript">
+	<map name="catsEnd">
+		<area shape="rect" coords="0,0,100,200" href="#" class="prevCat"></area>
+		<area shape="rect" coords="100,0,200,200" href="http://cats.com"></area>
+	</map>
 
-$(document).ready(function() {
-	$('li:not(.selected)').hide();
-});
+	<script type="text/javascript">
 
-$('.nextCat').click(function() {
+	$(document).ready(function() {
+		$('li:not(.selected)').hide();
+	});
+
+	$('.nextCat').click(function() {
 		$(".selected").hide().removeClass('selected')
 			.next().addClass('selected').show();
-});
+	});
 
-$('.prevCat').click(function() {
+	$('.prevCat').click(function() {
 		$(".selected").hide().removeClass('selected')
 			.prev().addClass('selected').show();
-});
+	});
 
-</script>
-
-</div>
+	</script>
 
 </body>
 </html>
