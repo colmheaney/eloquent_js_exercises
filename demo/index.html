@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>Demo</title>
+	<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+
+<div>
+
+	<ul>
+		<li class="selected"><img src="img/cat1.jpg" usemap="#catsStart"></li>
+		<li><img src="img/cat2.jpg" usemap="#cats"></li>
+		<li><img src="img/cat3.jpg" usemap="#cats"></li>
+		<li><img src="img/cat4.png" usemap="#catsEnd"></li>
+	</ul>
+
+	<map name="cats">
+		<area shape="rect" coords="100,0,200,200" href="#" class="nextCat"></area>
+		<area shape="rect" coords="0,0,100,200" href="#" class="prevCat"></area>
+	</map>
+
+	<map name="catsEnd">
+		<area shape="rect" coords="100,0,200,200" href="#"</area>
+		<area shape="rect" coords="0,0,100,200" href="#" class="prevCat"></area>
+	</map>
+
+	<map name="catsStart">
+		<area shape="rect" coords="100,0,200,200" href="#" class="nextCat"</area>
+		<area shape="rect" coords="0,0,100,200" href="#"</area>
+	</map>	
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$('li:not(.selected)').hide();
+});
+
+$('.nextCat').click(function() {
+		$(".selected").hide().removeClass('selected')
+			.next().addClass('selected').show();
+});
+
+$('.prevCat').click(function() {
+		$(".selected").hide().removeClass('selected')
+			.prev().addClass('selected').show();
+});
+
+</script>
+
+</div>
+
+</body>
+</html>
