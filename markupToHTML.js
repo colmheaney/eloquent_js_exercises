@@ -1,4 +1,4 @@
-debugger
+//debugger
 
 var paragraphs = map(processParagraph, recluseFile().split("\n\n"));
 
@@ -13,50 +13,7 @@ function processParagraph(paragraph) {
 			content: splitParagraph(paragraph)};
 }
 
-// function splitParagraph(paragraph) {
 
-// 	var emp, ref = null;
-// 	var fragments = [];
-
-// 	for (var i = 0; i < paragraph.length; i++) {
-// 		if (paragraph.charAt(i) == '*') {
-// 			emp = between(paragraph, '*', '*');
-// 			var new_emp = {content: emp.text, type: "emphasised"}
-// 			fragments.push(new_emp);
-// 			paragraph = paragraph.slice(emp.lastPos + 1);
-// 			i = -1;
-// 		} else if (paragraph.charAt(i) == '{') {
-// 			ref = between(paragraph, '{', '}');
-// 			var new_ref = {content: ref.text, type: "reference"}
-// 			fragments.push(new_ref);			
-// 			paragraph = paragraph.slice(ref.lastPos + 1);
-// 			i = -1;
-// 		} else {
-// 			norm = upTo(paragraph);
-// 			var new_norm = {content: norm.text, type: "normal"}			
-// 			fragments.push(new_norm);
-// 			paragraph = paragraph.slice(norm.lastPos);
-// 			i = -1;
-// 		}
-// 	}
-
-// 	return fragments;	
-
-// }
-
-// function upTo(string) {
-// 	var end = 0;
-
-// 	while (string.charAt(end) != "*") {
-// 		if (end == string.length) {
-// 			break;
-// 		}
-// 		end++;
-// 	}
-
-// 	return {text: string.slice(0, end),
-// 			lastPos: end};
-// }
 
 function splitParagraph(text) {
   function indexOrEnd(character) {
@@ -97,5 +54,102 @@ function splitParagraph(text) {
   return fragments;
 }
 
+function extractFootnotes(paragraphs) {
+  var footnotes = [];
+  var currentNote = 0;
+
+  function replaceFootnote(fragment) {
+    if (fragment.type == "footnote") {
+      currentNote++;
+      footnotes.push(fragment);
+      fragment.number = currentNote;
+      return {type: "reference", number: currentNote};
+    }
+    else {
+      return fragment;
+    }
+  }
+
+  forEach(paragraphs, function(paragraph) {
+    paragraph.content = map(replaceFootnote,
+                            paragraph.content);
+  });
+
+  return footnotes;
+}     
+
 //show(paragraphs);
 show(splitParagraph("rsdfo *asdadf* sfsd"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function splitParagraph(paragraph) {
+
+//  var emp, ref = null;
+//  var fragments = [];
+
+//  for (var i = 0; i < paragraph.length; i++) {
+//    if (paragraph.charAt(i) == '*') {
+//      emp = between(paragraph, '*', '*');
+//      var new_emp = {content: emp.text, type: "emphasised"}
+//      fragments.push(new_emp);
+//      paragraph = paragraph.slice(emp.lastPos + 1);
+//      i = -1;
+//    } else if (paragraph.charAt(i) == '{') {
+//      ref = between(paragraph, '{', '}');
+//      var new_ref = {content: ref.text, type: "reference"}
+//      fragments.push(new_ref);      
+//      paragraph = paragraph.slice(ref.lastPos + 1);
+//      i = -1;
+//    } else {
+//      norm = upTo(paragraph);
+//      var new_norm = {content: norm.text, type: "normal"}     
+//      fragments.push(new_norm);
+//      paragraph = paragraph.slice(norm.lastPos);
+//      i = -1;
+//    }
+//  }
+
+//  return fragments; 
+
+// }
+
+// function upTo(string) {
+//  var end = 0;
+
+//  while (string.charAt(end) != "*") {
+//    if (end == string.length) {
+//      break;
+//    }
+//    end++;
+//  }
+
+//  return {text: string.slice(0, end),
+//      lastPos: end};
+// }
