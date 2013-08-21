@@ -1,58 +1,161 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Demo</title>
-	<script type="text/javascript" src="jquery.js"></script>
-	<style type="text/css">
-	ul {
-		list-style-type: none;
-		padding-left: 0px;
-	}
-	</style>
+	<!--[if lt IE 9]>
+	    <script src="dist/html5shiv.js"></script>
+	    <script src="dist/html5shiv-printshiv.js"></script>
+    <![endif]-->	
+	<title>Test</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>	
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-	<h1>Cats!</h1>
 
-	<div>
-		<ul>
-			<li class="selected"><img src="img/cat1.jpg" usemap="#catsStart"></li>
-			<li><img src="img/cat2.jpg" usemap="#cats"></li>
-			<li><img src="img/cat3.jpg" usemap="#cats"></li>
-			<li><img src="img/cat4.png" usemap="#catsEnd"></li>
-		</ul>
-	</div>
 
-	<map name="catsStart">
-		<area shape="rect" coords="100,0,200,200" href="#" class="nextCat"</area>
-	</map>	
+<div class="grid">
+	<div class="row">
+
+		<header class="border">
+			<h1>Test</h1>
+
+			<nav id="header_nav">
+				<ul>
+					<li class="active"><a href="">Gallery</a></li>
+					<li><a href="">Downloads</a></li>
+					<li><a href="">Contact Us</a></li>
+				</ul>
+			</nav>	
+		</header>
+
+		<nav id="main_nav" >
+			<ul>
+				<li class="active"><a href="#tab1">Home</a></li>
+				<li><a href="#tab2">About</a></li>
+			</ul>
+		</nav><!-- end of col-1-3 -->
+
+
+		<section class="tabpane col-3-4">
+			<div class="selected tab border" id="tab1">
+				<h2>Home</h2>
+				<p class="row">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non lectus rutrum, tincidunt nisl vitae, pellentesque elit. Fusce vel dolor eget nibh convallis rutrum eget in est. Sed ac nibh vel turpis elementum blandit. Proin massa ipsum, scelerisque ut egestas vitae, cursus quis tortor. Aliquam rhoncus mattis ante. Phasellus eget lacus quam. Vivamus nulla libero, viverra eget volutpat sed, consectetur sit amet nibh. Fusce laoreet semper tincidunt. Proin non porta turpis. Mauris sed quam et mi viverra semper in vel risus.
+				</p>
+				<p class="row">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non lectus rutrum, tincidunt nisl vitae, pellentesque elit. Fusce vel dolor eget nibh convallis rutrum eget in est. Sed ac nibh vel turpis elementum blandit. Proin massa ipsum, scelerisque ut egestas vitae, cursus quis tortor. Aliquam rhoncus mattis ante. Phasellus eget lacus quam. Vivamus nulla libero, viverra eget volutpat sed, consectetur sit amet nibh. Fusce laoreet semper tincidunt. Proin non porta turpis. Mauris sed quam et mi viverra semper in vel risus.
+				</p>		
+				<p class="row">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non lectus rutrum, tincidunt nisl vitae, pellentesque elit. Fusce vel dolor eget nibh convallis rutrum eget in est. Sed ac nibh vel turpis elementum blandit. Proin massa ipsum, scelerisque ut egestas vitae, cursus quis tortor. Aliquam rhoncus mattis ante. Phasellus eget lacus quam. Vivamus nulla libero, viverra eget volutpat sed, consectetur sit amet nibh. Fusce laoreet semper tincidunt. Proin non porta turpis. Mauris sed quam et mi viverra semper in vel risus.
+				</p>
+				
+			</div><!-- end of tab1  -->
+		
+			<div class="tab border" id="tab2">
+				<h2>About</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non lectus rutrum, tincidunt nisl vitae, pellentesque elit. Fusce vel dolor eget nibh convallis rutrum eget in est. Sed ac nibh vel turpis elementum blandit. Proin massa ipsum, scelerisque ut egestas vitae, cursus quis tortor. Aliquam rhoncus mattis ante. Phasellus eget lacus quam. Vivamus nulla libero, viverra eget volutpat sed, consectetur sit amet nibh. Fusce laoreet semper tincidunt. Proin non porta turpis. Mauris sed quam et mi viverra semper in vel risus.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non lectus rutrum, tincidunt nisl vitae, pellentesque elit. Fusce vel dolor eget nibh convallis rutrum eget in est. Sed ac nibh vel turpis elementum blandit. Proin massa ipsum, scelerisque ut egestas vitae, cursus quis tortor. Aliquam rhoncus mattis ante. Phasellus eget lacus quam. Vivamus nulla libero, viverra eget volutpat sed, consectetur sit amet nibh. Fusce laoreet semper tincidunt. Proin non porta turpis. Mauris sed quam et mi viverra semper in vel risus.
+				</p>
+
+			</div><!-- end of tab2 -->	
+		</section><!-- end of of tabpane -->
+	</div><!-- end of row 1-->
 	
-	<map name="cats">
-		<area shape="rect" coords="0,0,100,200" href="#" class="prevCat"></area>
-		<area shape="rect" coords="100,0,200,200" href="#" class="nextCat"></area>
-	</map>
+	<section class="col-3-4 row event border">
+		<h2>Events</h2>
+		<p class="col-1-3">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p class="col-1-3">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p class="col-1-3">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	</section><!-- end of row 3 -->
+	<section class="col-3-4 row social border">
+		<article class="col-1-2">
+			<h2>Social</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</article>
+		<article class="col-1-2">
+			<h2>Magazine</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</article>
+	</section>
+</div><!-- end of grid -->
 
-	<map name="catsEnd">
-		<area shape="rect" coords="0,0,100,200" href="#" class="prevCat"></area>
-		<area shape="rect" coords="100,0,200,200" href="http://cats.com"></area>
-	</map>
+<b id="te"></b>
+<b id="be"></b>
+<b id="le"></b>
+<b id="re"></b>
 
-	<script type="text/javascript">
+<script type="text/javascript">
 
-	$(document).ready(function() {
-		$('li:not(.selected)').hide();
-	});
+$(document).ready(function() {
+	$('.tab:not(#tab1)').hide();	
+});
 
-	$('.nextCat').click(function() {
-		$(".selected").hide().removeClass('selected')
-			.next().addClass('selected').show();
-	});
+	
+var Site = {
+	init : function() {
+		this.tabs();
+	},
 
-	$('.prevCat').click(function() {
-		$(".selected").hide().removeClass('selected')
-			.prev().addClass('selected').show();
-	});
+	tabs : function() {
+		var tabpane = $('.tabpane'),
+			tab = tabpane.find('.tab')
+			nav = $('nav');
 
-	</script>
+		nav.delegate('li', 'click', function(e) {
+			var li = $(this),
+						hash;
+
+					
+			hash = li.children('a').attr('href');
+			tab.hide().filter(hash).show();
+
+			e.preventDefault();
+		});
+	}
+}
+
+Site.init();
+
+</script>
 
 </body>
 </html>
+
