@@ -12,7 +12,7 @@
 <body>
 
 <style>
-	html, body {
+html, body {
 	margin: 0;
 	padding: 0;
 }
@@ -109,10 +109,10 @@ h2 {
 }
 #header_nav ul {
 	margin-top: 10px;
+	padding: 5px;	
 }
 #header_nav li {
 	display: inline;
-	padding: 5px;	
 }
 #main_nav {
 	top: 285px;
@@ -122,7 +122,7 @@ h2 {
 }
 #main_nav li {
 	padding: 5px;	
-	width: 189px;
+	width: 199px;
 }
 #main_nav li:hover {
 	background: #eee;
@@ -182,7 +182,49 @@ h2 {
 .social {
 	margin-bottom: 50px;
 }
-	
+
+
+@media (max-width: 1000px) and (min-width: 800px) {
+  #main_nav ul li {
+  	width: 150px;
+  }
+  .col-1-3 {
+  	width: 50%;
+  }  
+}
+@media (max-width: 799px) and (min-width: 0px) {
+	#main_nav {
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+	#main_nav ul {
+		width: 90%;
+	}
+	#main_nav li {
+		display: inline;
+	}
+	.col-2-3 {
+		width: 90%;
+	}
+	.col-3-4 {
+		width: 90%;
+	}
+	.col-1-3 {
+		width: 50%;
+	} 	
+	header {
+		width: 90%;
+	}
+}
+@media (max-width: 499px) and (min-width: 0px) {
+	.col-1-3 {
+		width: 90%%;
+	}
+	.col-1-2 {
+		width: 90%;
+	}
+}
 </style>
 
 <div class="grid">
@@ -193,7 +235,7 @@ h2 {
 
 			<nav id="header_nav">
 				<ul>
-					<li class="active"><a href="">Gallery</a></li>
+					<li class="active"><a href="">Home</a></li>
 					<li><a href="">Downloads</a></li>
 					<li><a href="">Contact Us</a></li>
 				</ul>
@@ -202,8 +244,11 @@ h2 {
 
 		<nav id="main_nav" >
 			<ul>
-				<li class="active"><a href="#tab1">Home</a></li>
+				<li class="active"><a href="#tab1">Welcome</a></li>
 				<li><a href="#tab2">About</a></li>
+				<li><a href="#tab3">Something else</a></li>
+				<li><a href="#tab4">Another thing</a></li>
+				<li><a href="#tab5">Contact Us</a></li>
 			</ul>
 		</nav><!-- end of col-1-3 -->
 
@@ -330,4 +375,3 @@ Site.init();
 
 </body>
 </html>
-
